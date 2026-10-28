@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Save as LaTeX settings</title>
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body>
+    <div class="options">
+      <header>
+        <div>
+          <h1>Settings</h1>
+          <p class="sub">The agent key stays in this browser, on this computer.</p>
+        </div>
+      </header>
+      <main>
+        <div>
+          <p class="hint field-help">Preset</p>
+          <div class="presets">
+            <button id="preset-openai" class="secondary" type="button">OpenAI</button>
+            <button id="preset-anthropic" class="secondary" type="button">Anthropic</button>
+            <button id="preset-ollama" class="secondary" type="button">Ollama</button>
+          </div>
+        </div>
+        <label>
+          Provider
+          <select id="provider">
+            <option value="openai">OpenAI-compatible</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="ollama">Local (Ollama)</option>
+          </select>
+        </label>
+        <label>
+          API key
+          <input id="apiKey" type="password" autocomplete="off" placeholder="Required except for a local model" />
+        </label>
+        <label>
+          Endpoint
+          <input id="baseUrl" type="url" autocomplete="off" />
+        </label>
+        <label>
+          Model
+          <input id="model" type="text" autocomplete="off" />
+        </label>
+        <label>
+          Author
+          <input id="author" type="text" autocomplete="off" />
+        </label>
+        <label>
+          Header path
+          <input id="headerPath" type="text" autocomplete="off" spellcheck="false" />
+        </label>
+        <p class="hint">This path is written in <code>\input{...}</code> and sent to the agent. It is not given a <code>.tex</code> extension.</p>
+        <div class="actions">
+          <button id="choose-header" class="secondary" type="button">Open header file</button>
+          <button id="forget-header" class="secondary" type="button" disabled>Forget file</button>
+        </div>
+        <p id="header-file-status" class="hint">No header file opened. The agent only sees the path.</p>
+        <label>
+          Extra instructions
+          <textarea id="extraPrompt" spellcheck="true" placeholder="Rules for every assignment."></textarea>
+        </label>
+        <p class="hint">Saved as you type. Sent with every transcription, in addition to the box in the side panel. Draft locally does not use them.</p>
+        <button id="save" class="primary" type="button">Save settings</button>
+        <p id="status" role="status"></p>
+      </main>
+    </div>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

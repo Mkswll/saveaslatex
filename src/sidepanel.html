@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Save as LaTeX</title>
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body class="panel">
+    <header>
+      <div>
+        <h1>Save as <span>LaTeX</span></h1>
+        <p class="sub">Read the assignment, then save a homework file.</p>
+      </div>
+      <button id="settings" class="text" type="button">Settings</button>
+    </header>
+    <main>
+      <div class="fields">
+        <label>
+          Course
+          <input id="course" type="text" autocomplete="off" placeholder="MATHXXX" />
+        </label>
+        <label>
+          Assignment
+          <input id="assignment" type="text" autocomplete="off" placeholder="X" />
+        </label>
+      </div>
+      <p id="title-preview" class="title-preview">MATHXXX Assignment X</p>
+      <div class="actions">
+        <button id="read" class="primary" type="button">Read this page</button>
+      </div>
+      <label class="check">
+        <input id="screenshot" type="checkbox" />
+        Send a screenshot to the agent
+      </label>
+      <p class="hint">The picture is only sent when this is checked. Italics are read from the page either way.</p>
+      <label>
+        Instructions for this assignment
+        <textarea id="instructions" spellcheck="true" placeholder="Rules for this assignment only."></textarea>
+      </label>
+      <p id="standing" class="hint">No extra instructions are saved in Settings.</p>
+      <details id="source-wrap">
+        <summary>Page text</summary>
+        <p id="source-meta" class="meta"></p>
+        <textarea id="source" spellcheck="false" placeholder="The assignment text shows up here. You can also paste it."></textarea>
+      </details>
+      <div class="actions">
+        <button id="transcribe" class="primary" type="button">Transcribe with agent</button>
+        <button id="draft" class="secondary" type="button">Draft locally</button>
+      </div>
+      <div class="output-head">
+        <span class="meta">Homework file</span>
+        <button id="copy" class="text" type="button" disabled>Copy</button>
+      </div>
+      <textarea id="output" spellcheck="false" placeholder="The .tex file shows up here."></textarea>
+      <button id="save" class="primary save" type="button" disabled>Save .tex file</button>
+      <p id="status" role="status">Open an assignment page, then read it.</p>
+    </main>
+    <p class="note">Skim the file before you compile it. It is transcribed from the web.</p>
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

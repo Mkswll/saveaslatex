@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MATH 240 Homework 4</title>
+  </head>
+  <body>
+    <nav class="navbar">Home</nav>
+    <main>
+      <h1>MATH 240 Homework 4</h1>
+      <p>
+        Question 1. Compute
+        <span class="katex">
+          <span class="katex-html" aria-hidden="true">x squared</span>
+          <span class="katex-mathml">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <annotation encoding="application/x-tex">\int_0^1 x^2\,dx</annotation>
+            </math>
+          </span>
+        </span>.
+      </p>
+      <p class="katex-display">
+        <span class="katex">
+          <annotation encoding="application/x-tex">e^{i\pi}+1=0</annotation>
+        </span>
+      </p>
+      <p>Question 2. Show that <em>n</em> is even and <span style="font-style: italic">positive</span>.</p>
+    </main>
+    <script type="module">
+      import { extractAssignmentInPage } from "../src/extract.js";
+      document.documentElement.dataset.extracted = JSON.stringify(extractAssignmentInPage());
+    </script>
+  </body>
+</html>
